@@ -2711,6 +2711,8 @@ public sealed partial class NpgsqlConnector
         var name = TextEncoding.GetString(rawName);
         var value = TextEncoding.GetString(rawValue);
 
+        ConnectionLogger.LogTrace("PostgreSQL connection parameter change, {Name}={Value}", name, value);
+
         PostgresParameters[name] = value;
 
         switch (name)
